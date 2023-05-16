@@ -1,6 +1,7 @@
 # This is the first page hosted on github.io
 
 <!DOCTYPE html>
+
 <html>
     <head>
     <!-- Title -->
@@ -147,66 +148,105 @@
 
                 //画时刻度
 
-                for (var i = 0; i < 12; i++) {
+                for (var i = 0; i < 12; i++) 
+				{
                     context.save();
-                    context.strokeStyle='black';
-                    context.beginPath();
-                    context.translate(width/2, width/2);
-                    context.rotate(i * 30 * Math.PI / 180);
-                    context.beginPath();
-                    context.moveTo(0, -(width/3)-20);
-                    context.lineTo(0, - (width/3) );
-                    context.closePath();
-                    context.stroke();
-                    context.restore();
+                    
+					context.strokeStyle='black';
+                    
+					context.beginPath();
+                    
+					context.translate(width/2, width/2);
+                    
+					context.rotate(i * 30 * Math.PI / 180);
+                    
+					context.beginPath();
+                    
+					context.moveTo(0, -(width/3)-20);
+                    
+					context.lineTo(0, - (width/3) );
+                    
+					context.closePath();
+                    
+					context.stroke();
+                    
+					context.restore();
                 }
 
 
                 //画分刻度
                 context.beginPath();
-                for (var i = 0; i < 60; i++) {
-                    context.save();
-                    context.strokeStyle='blue';
-                    context.beginPath();
-                    context.translate(width/2, width/2);
-                    context.rotate(i * 6 * Math.PI / 180);
-                    context.moveTo(0, -(width/3)-10);
-                    context.lineTo(0, -(width/3)-20);
-                    context.closePath();
-                    context.stroke();
-                    context.restore();
+                for (var i = 0; i < 60; i++) 
+				{
+                    context.save () ;
+                    
+					context.strokeStyle='blue';
+                    
+					context.beginPath();
+                    
+					context.translate ( width/2, width/2 );
+                    
+					context.rotate    (i * 6 * Math.PI / 180);
+                    
+					context.moveTo    (0, -(width/3)-10);
+                    
+					context.lineTo    (0, -(width/3)-20);
+                    
+					context.closePath () ;
+                    
+					context.stroke();
+                    
+					context.restore();
                 }
 
 
                 //画时针
                 context.save();
-                context.lineWidth=12;
-				context.strokeStyle='red';
-                context.beginPath();
-                context.translate(width/2, width/2);
-                context.rotate(hour * Math.PI * 30 / 180);
-                context.moveTo(0, -(width/4));
-                context.lineTo(0, 10);
-                context.closePath();
-                context.stroke();
-                context.restore();
+                
+				context.lineWidth=15 ;
+				
+				context.strokeStyle='blue';
+                
+				context.beginPath();
+                
+				context.translate(width/2, width/2);
+                
+				context.rotate(hour * Math.PI * 30 / 180);
+                
+				context.moveTo(0, -(width/4));
+                
+				context.lineTo(0, 10);
+                
+				context.closePath();
+                
+				context.stroke();
+                
+				context.restore();
 
                 //画分针
                 context.save();
-                context.lineWidth=8;
+                
+				context.lineWidth = 8 ;
+				
 				context.strokeStyle='yellow';
-                context.beginPath();
-                context.translate(width/2, width/2);
+                
+				context.beginPath();
+                
+				context.translate(width/2, width/2);
+				
                 context.rotate(min * Math.PI * 6 / 180);
-                context.moveTo(0, -(width/3));
-                context.lineTo(0, 10);
-                context.closePath();
+                
+				context.moveTo(0, -(width/3) +10 );
+                
+				context.lineTo (0, 0);
+                
+				context.closePath();
                 context.stroke();
                 context.restore();
 
                 //画秒针
                 context.save();
-                context.lineWidth=5;
+                context.lineWidth = 1;
                 context.strokeStyle='purple';
                 context.beginPath();
                 context.translate(width/2, width/2);
