@@ -136,10 +136,10 @@
                 min = min + sec / 60;
 
                 //画圆
-                context.lineWidth=10;
+                context.lineWidth=3;
                 context.strokeStyle='#000';
                 context.beginPath();
-                context.arc(width/2, width/2, 200, 0, 360, false);
+                context.arc(width/2, width/2, 100, 0, 360, false);
                 context.closePath();
                 context.stroke();
 
@@ -181,6 +181,7 @@
                 //画时针
                 context.save();
                 context.lineWidth=12;
+				context.strokeStyle='red';
                 context.beginPath();
                 context.translate(width/2, width/2);
                 context.rotate(hour * Math.PI * 30 / 180);
@@ -193,6 +194,7 @@
                 //画分针
                 context.save();
                 context.lineWidth=8;
+				context.strokeStyle='yellow';
                 context.beginPath();
                 context.translate(width/2, width/2);
                 context.rotate(min * Math.PI * 6 / 180);
