@@ -117,14 +117,16 @@
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
 		<p>##效果图</p>
-<p><canvas id="mycanvas" width="500" height="500" style="background: #B0D141"></canvas></p>
+<p><canvas id="mycanvas" width="360" height="360" style="background: #B0D141"></canvas></p>
 <script>
             var mycanvas = document.getElementById("mycanvas");
             var context = mycanvas.getContext("2d");
+			var width = 360 ; 
+			var height = 360 ;
 
             function drawClock() {
                 //每次调用函数都要对指定区域清屏
-                context.clearRect(0, 0, 500, 500);
+                context.clearRect(0, 0, width, width);
                 var date = new Date();
                 var hour = date.getHours();
                 var min = date.getMinutes();
@@ -137,7 +139,7 @@
                 context.lineWidth=10;
                 context.strokeStyle='#000';
                 context.beginPath();
-                context.arc(250, 250, 200, 0, 360, false);
+                context.arc(width/2, width/2, 200, 0, 360, false);
                 context.closePath();
                 context.stroke();
 
@@ -149,11 +151,11 @@
                     context.save();
                     context.strokeStyle='black';
                     context.beginPath();
-                    context.translate(250, 250);
+                    context.translate(width/2, width/2);
                     context.rotate(i * 30 * Math.PI / 180);
                     context.beginPath();
-                    context.moveTo(0, -190);
-                    context.lineTo(0, -170);
+                    context.moveTo(0, -(width/3)-20);
+                    context.lineTo(0, - (width/3) );
                     context.closePath();
                     context.stroke();
                     context.restore();
@@ -164,12 +166,12 @@
                 context.beginPath();
                 for (var i = 0; i < 60; i++) {
                     context.save();
-                    context.strokeStyle='black';
+                    context.strokeStyle='blue';
                     context.beginPath();
-                    context.translate(250, 250);
+                    context.translate(width/2, width/2);
                     context.rotate(i * 6 * Math.PI / 180);
-                    context.moveTo(0, -190);
-                    context.lineTo(0, -180);
+                    context.moveTo(0, -(width/3)-10);
+                    context.lineTo(0, -(width/3)-20);
                     context.closePath();
                     context.stroke();
                     context.restore();
@@ -180,9 +182,9 @@
                 context.save();
                 context.lineWidth=12;
                 context.beginPath();
-                context.translate(250, 250);
+                context.translate(width/2, width/2);
                 context.rotate(hour * Math.PI * 30 / 180);
-                context.moveTo(0, -135);
+                context.moveTo(0, -(width/4));
                 context.lineTo(0, 10);
                 context.closePath();
                 context.stroke();
@@ -192,9 +194,9 @@
                 context.save();
                 context.lineWidth=8;
                 context.beginPath();
-                context.translate(250, 250);
+                context.translate(width/2, width/2);
                 context.rotate(min * Math.PI * 6 / 180);
-                context.moveTo(0, -160);
+                context.moveTo(0, -(width/3));
                 context.lineTo(0, 10);
                 context.closePath();
                 context.stroke();
@@ -203,12 +205,12 @@
                 //画秒针
                 context.save();
                 context.lineWidth=5;
-                context.strokeStyle='red';
+                context.strokeStyle='purple';
                 context.beginPath();
-                context.translate(250, 250);
+                context.translate(width/2, width/2);
                 context.rotate(sec * Math.PI * 6 / 180);
-                context.moveTo(0, -182);
-                context.lineTo(0, 16);
+                context.moveTo(0, -(width/3)-10);
+                context.lineTo(0, 12);
                 context.closePath();
                 context.stroke();
                 context.restore();
